@@ -1,0 +1,23 @@
+{
+  "name": "algorithms",
+  "version": "0.0.1",
+  "description": "base data structure and algorithms implements by javascript.",
+  "main": "index.js",
+  "author": "JonathanLee",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-typescript": "^7.10.1",
+    "@types/jest": "^26.0.0",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
