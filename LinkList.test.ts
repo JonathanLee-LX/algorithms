@@ -1,4 +1,4 @@
-import LinkList, { Stack, LinkNode } from './LinkList'
+import LinkList, { Stack, LinkNode, ListIterator } from './LinkList'
 
 describe('test LinkList Data Structure', () => {
   it('should be init a new LinkList instance', () => {
@@ -27,5 +27,21 @@ describe('test Stack Data Structure', () => {
     expect(stack.pop()).toBeNull()
 
     expect(stack.size()).toBe(0)
+
+    stack.push(new LinkNode(10))
+    const it = stack.iterator()
+    expect(it).toBeInstanceOf(ListIterator)
+    expect(it.next()).toEqual({
+      value: {
+        item: 10,
+        next: null,
+      },
+      done: true,
+    })
+    expect(it.hasNext()).toBe(false)
+    expect(it.next()).toEqual({
+      value: null,
+      done: true,
+    })
   })
 })
