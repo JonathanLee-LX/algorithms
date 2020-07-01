@@ -1,4 +1,6 @@
-import LinkList, { Stack, LinkNode, ListIterator } from './LinkList'
+import LinkList, { LinkNode } from './LinkList'
+import { ListIterator } from './Iterable'
+import Stack from './Stack'
 
 describe('test LinkList Data Structure', () => {
   it('should be init a new LinkList instance', () => {
