@@ -50,79 +50,8 @@ export default class LinkList<T> {
   }
 }
 
-export class Stack<T> implements Iterable<T> {
-  private first: LinkNode<T> | null
-
-  private N: number
-
-  public size() {
-    return this.N
-  }
-
-  public isEmpty(): boolean {
-    return this.N === 0
-  }
-
-  public push(item: LinkNode<T>) {
-    const oldFirst = this.first
-    this.first = item
-    this.first.next = oldFirst
-    this.N++
-  }
-
-  /**
-   * pop
-   */
-  public pop() {
-    if (this.isEmpty()) return null
-    const oldFirst = this.first
-    this.first = this.first?.next ?? null
-    this.N--
-    return oldFirst
-  }
-
-  public iterator(): ListIterator<T> {
-    return new ListIterator(this.first)
-  }
-
-  constructor() {
-    this.N = 0
-    this.first = null
-  }
-}
-
 const list = new LinkList<string>()
 
 for (let i = 0; i < 10; i++) {
   list.push(new LinkNode(i.toString()))
-}
-
-interface Iterable<T> {
-  iterator(): ListIterator<T>
-}
-
-interface Iterator<T> {
-  hasNext(): void
-  next(): { value: T | null; done: boolean }
-}
-
-export class ListIterator<T> implements Iterator<LinkNode<T>> {
-  constructor(first: LinkNode<T> | null) {
-    this._current = first
-  }
-
-  private _current: LinkNode<T> | null
-
-  hasNext() {
-    return this._current !== null
-  }
-
-  next() {
-    const oldCurrent = this._current
-    this._current = this._current?.next ?? null
-    return {
-      value: oldCurrent,
-      done: this._current === null,
-    }
-  }
 }
