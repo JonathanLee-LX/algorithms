@@ -1,4 +1,4 @@
-import { LinkNode } from './LinkList'
+import LinkNode from './LinkNode'
 import { Iterable, ListIterator } from './Iterable'
 
 export default class Stack<T> implements Iterable<T> {

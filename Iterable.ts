@@ -1,9 +1,9 @@
-import { LinkNode } from './LinkList'
+import LinkNode from './LinkNode'
 
 export interface Iterable<T> {
   iterator(): ListIterator<T>
 }
-interface Iterator<T> {
+export interface Iterator<T> {
   hasNext(): void
   next(): { value: T | null; done: boolean }
 }

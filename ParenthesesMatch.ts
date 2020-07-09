@@ -1,5 +1,5 @@
 import Stack from './Stack'
-import { LinkNode } from './LinkList'
+import LinkNode from './LinkNode'
 
 function getValue(character: string) {
   let result: number

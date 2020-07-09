@@ -1,12 +1,4 @@
-export class LinkNode<T> {
-  public next: LinkNode<T> | null
-  public item: T | null
-
-  constructor(item: T | null = null) {
-    this.next = null
-    this.item = item
-  }
-}
+import LinkNode from './LinkNode'
 
 export default class LinkList<T> {
   private first: LinkNode<T> | null
@@ -19,27 +11,28 @@ export default class LinkList<T> {
    * size
    * return LinkList length
    */
-  public getSize() {
+  public getSize(): number {
     return this.size
   }
 
-  public push(node: LinkNode<T>) {
+  public push(node: LinkNode<T>): void {
     if (this.size === 0) {
-      this.first = this.last = node
+      this.last = node
+      this.first = this.last
     } else {
       const oldLast = this.last as LinkNode<T>
       this.last = node
       oldLast.next = this.last
     }
 
-    this.size++
+    this.size += 1
   }
 
   public pop() {
     if (this.size === 0) return null
     const oldFirst = this.first
     this.first = this.first?.next ?? null
-    this.size--
+    this.size -= 1
     return oldFirst
   }
 
@@ -52,6 +45,6 @@ export default class LinkList<T> {
 
 const list = new LinkList<string>()
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i += 1) {
   list.push(new LinkNode(i.toString()))
 }

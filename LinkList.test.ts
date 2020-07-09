@@ -1,4 +1,5 @@
-import LinkList, { LinkNode } from './LinkList'
+import LinkList from './LinkList'
+import LinkNode from './LinkNode'
 import { ListIterator } from './Iterable'
 import Stack from './Stack'
 
