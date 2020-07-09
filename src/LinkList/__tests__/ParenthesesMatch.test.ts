@@ -1,4 +1,4 @@
-import parenthesesMatch from './ParenthesesMatch'
+import parenthesesMatch from '../ParenthesesMatch'
 
 describe('test parenthesesMatch function', () => {
   it('should right match', () => {
