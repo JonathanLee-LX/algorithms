@@ -8,6 +8,11 @@ export interface Iterator<T> {
   next(): { value: T | null; done: boolean }
 }
 
+export interface IterateResult<T> {
+  value: LinkNode<T> | null
+  done: boolean
+}
+
 export class ListIterator<T> implements Iterator<LinkNode<T>> {
   constructor(first: LinkNode<T> | null) {
     this._current = first
@@ -15,11 +20,11 @@ export class ListIterator<T> implements Iterator<LinkNode<T>> {
 
   private _current: LinkNode<T> | null
 
-  hasNext() {
+  hasNext(): boolean {
     return this._current !== null
   }
 
-  next() {
+  next(): IterateResult<T> {
     const oldCurrent = this._current
     this._current = this._current?.next ?? null
     return {

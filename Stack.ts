@@ -6,7 +6,7 @@ export default class Stack<T> implements Iterable<T> {
 
   private N: number
 
-  public size() {
+  public size(): number {
     return this.N
   }
 
@@ -14,7 +14,7 @@ export default class Stack<T> implements Iterable<T> {
     return this.N === 0
   }
 
-  public push(item: LinkNode<T>) {
+  public push(item: LinkNode<T>): void {
     const oldFirst = this.first
     this.first = item
     this.first.next = oldFirst
@@ -25,7 +25,7 @@ export default class Stack<T> implements Iterable<T> {
    * pop
    */
 
-  public pop() {
+  public pop(): LinkNode<T> | null {
     if (this.isEmpty()) return null
     const oldFirst = this.first
     this.first = this.first?.next ?? null

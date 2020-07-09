@@ -42,8 +42,8 @@ export default function parenthesesMatch(text: string): boolean {
       } else {
         const top = stack.pop()
         // '{' > '[' > '('
-        if (top?.item! > values[i]) {
-          stack.push(top!)
+        if (top?.item && top.item > values[i]) {
+          stack.push(top)
           stack.push(new LinkNode(values[i]))
         } else {
           return false
