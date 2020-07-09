@@ -8,3 +8,5 @@ export default class LinkNode<T> {
     this.item = item
   }
 }
+
+console.log('hello world')
